@@ -1,3 +1,8 @@
+//get data
+db.collection("scans").get().then(snapshot => {
+  console.log(snapshot.docs)
+})
+
 // listen for auth status changes
 auth.onAuthStateChanged(user => {
   if (user) {
