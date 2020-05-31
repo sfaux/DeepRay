@@ -1,44 +1,43 @@
-<html lang='en'>
+<html>
 <head>
-  <meta charset='utf-8'>
-  <link rel='stylesheet' href='../static/style.css'>
-  <script src='../static/client.js'></script>
+  <title>Firebase Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <ul>
-    <li><a href="app/view/home.html">Home</a></li>
-    <li><a href="app/view/index.html">Model</a></li>
-  </ul>
-<div>
-  <div class='center'>
-    <div class='title'>Classify Waste 🗑</div>
-    <p>
-      Use images of cardboard, paper, plastic, glass, trash, and metal!
-    </p>
-    <div class='content'>
-      <div class='no-display'>
-        <input id='file-input'
-               class='no-display'
-               type='file'
-               name='file'
-               accept='image/*'
-               onchange='showPicked(this)'>
-      </div>
-      <button class='choose-file-button' type='button' onclick='showPicker()'>Select Image</button>
-      <div class='upload-label'>
-        <label id='upload-label'>No file chosen</label>
-      </div>
-      <div>
-        <img id='image-picked' class='no-display' alt='Chosen Image' height='200'>
-      </div>
-      <div class='analyze'>
-        <button id='analyze-button' class='analyze-button' type='button' onclick='analyze()'>Analyze</button>
-      </div>
-      <div class='result-label'>
-        <label id='result-label'></label>
-      </div>
-    </div>
+
+  <div id="login_div" class="main-div">
+    <h3>Firebase Web login Example</h3>
+    <input type="email" placeholder="Email..." id="email_field" />
+    <input type="password" placeholder="Password..." id="password_field" />
+
+    <button onclick="login()">Login to Account</button>
   </div>
-</div>
+
+  <div id="user_div" class="loggedin-div">
+    <h3>Welcome User</h3>
+    <p id="user_para">Welcome to Firebase web login Example. You're currently logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+
+
+
+  <script src="https://www.gstatic.com/firebasejs/4.8.1/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyASxxScbJnC0OLVG-8r4v_pjGbo200jIG4",
+      authDomain: "deepray-5913e.firebaseapp.com",
+      databaseURL: "https://deepray-5913e.firebaseio.com",
+      projectId: "deepray-5913e",
+      storageBucket: "deepray-5913e.appspot.com",
+      messagingSenderId: "582192131692",
+      appId: "1:582192131692:web:9a231297bc38f4cf92f249",
+      measurementId: "G-89JBCRTEXG"
+    };
+    firebase.initializeApp(config);
+  </script>
+  <script src="index.js"></script>
+
 </body>
 </html>
